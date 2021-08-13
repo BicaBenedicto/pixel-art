@@ -2,10 +2,27 @@ body {
   background-color: white;
 }
 
+div.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  margin: 0px;
+  width: 40px;
+}
+
 #title, #color-palette{
   text-align: center;
   margin: 50px;
 }
+
+#pixel-board {
+  height: 220px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 240px;
+}
+
 
 .color {
   border: 1px solid black;
