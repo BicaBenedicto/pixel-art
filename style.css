@@ -11,6 +11,13 @@ div.pixel {
   width: 40px;
 }
 
+#clear-board {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
 #title, #color-palette{
   text-align: center;
   margin: 50px;
@@ -18,6 +25,7 @@ div.pixel {
 
 #pixel-board {
   height: 220px;
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
   width: 240px;
