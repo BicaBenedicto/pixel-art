@@ -1,27 +1,9 @@
 const color = document.querySelectorAll('.color');
 
-window.onload = function() {
-  inicio();
-}
-
-function inicio() {
-  let buttonVQV = document.getElementById('board-size');
-  const borda = 5 * 42;
-  const px = 'px';
-  
-  buttonVQV.type = 'number';
-  buttonVQV.min = '1';
-
-  addPixel(5);
-
-  colorBorder.style.width = borda + px;
-  colorBorder.style.height = borda + px;
-}
-
 function unselectOthers(evento) {
-  for (let c of color) {
-    if (evento.target !== c) {
-      c.classList.remove('selected');
+  for (let c = 0; c < color.length; c += 1) {
+    if (evento.target !== color[c]) {
+      color[c].classList.remove('selected');
     }
   }
 }
@@ -38,9 +20,9 @@ colorPalette.addEventListener('click', select);
 
 function changeColor(evento) {
   const event = evento;
-  for (let c of color) {
-    if (c.classList.contains('selected')) {
-      event.target.style.backgroundColor = c.style.backgroundColor;
+  for (let c = 0; c < color.length; c += 1) {
+    if (color[c].classList.contains('selected')) {
+      event.target.style.backgroundColor = color[c].style.backgroundColor;
     }
   }
 }
@@ -51,8 +33,8 @@ colorBorder.addEventListener('click', changeColor);
 function clearBorder() {
   const colorBorderChildren = document.getElementById('pixel-board').children;
 
-  for (let c of colorBorderChildren) {
-    c.style.backgroundColor = 'white';
+  for (let c = 0; c < colorBorderChildren.length; c += 1) {
+    colorBorderChildren[c].style.backgroundColor = 'white';
   }
 }
 
@@ -60,9 +42,9 @@ const buttonClear = document.getElementById('clear-board');
 buttonClear.addEventListener('click', clearBorder);
 
 function addPixel(number) {
-  let numberPixels = number * number;
+  const numberPixels = number * number;
   for (let index = 1; index <= numberPixels; index += 1) {
-    let pixel = document.createElement('div');
+    const pixel = document.createElement('div');
 
     pixel.className = 'pixel';
     colorBorder.appendChild(pixel);
@@ -72,8 +54,8 @@ function addPixel(number) {
 function removePixel() {
   const pixels = document.querySelectorAll('.pixel');
 
-  for (const index of pixels) {
-    index.remove();
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].remove();
   }
 }
 
@@ -89,13 +71,13 @@ function checkRange(range) {
 function pixelPanel() {
   let numberPixels = document.getElementById('board-size').value;
   if (numberPixels) {
-      numberPixels = checkRange(numberPixels);
-      removePixel();
-      addPixel(numberPixels);
-      const borda = numberPixels * 42;
-      const px = 'px';
-      colorBorder.style.width = borda + px;
-      colorBorder.style.height = borda + px;
+    numberPixels = checkRange(numberPixels);
+    removePixel();
+    addPixel(numberPixels);
+    const borda = numberPixels * 42;
+    const px = 'px';
+    colorBorder.style.width = borda + px;
+    colorBorder.style.height = borda + px;
   } else {
     alert('Board inválido!');
   }
@@ -105,18 +87,18 @@ const buttonAddPixel = document.getElementById('generate-board');
 buttonAddPixel.addEventListener('click', pixelPanel);
 
 function generateColor() {
-  let r = parseInt(Math.random() * 255);
-  let g = parseInt(Math.random() * 255);
-  let b = parseInt(Math.random() * 255);
-  let colorGenerate = `rgb(${r}, ${g}, ${b})`;
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  const colorGenerate = `rgb(${r}, ${g}, ${b})`;
 
   return colorGenerate;
 }
 
 function getInitColor() {
-  let colorPaletteChildren = document.querySelectorAll('.color');
+  const colorPaletteChildren = document.querySelectorAll('.color');
 
-  for(let index = 1; index < colorPaletteChildren.length; index += 1) {
+  for (let index = 1; index < colorPaletteChildren.length; index += 1) {
     colorPaletteChildren[index].style.backgroundColor = generateColor();
     console.log(colorPaletteChildren[index]);
     console.log(generateColor());
@@ -124,3 +106,19 @@ function getInitColor() {
 }
 
 getInitColor();
+
+function inicio() {
+  const buttonVQV = document.getElementById('board-size');
+  const borda = 5 * 42;
+  const px = 'px';
+
+  buttonVQV.type = 'number';
+  buttonVQV.min = '1';
+
+  addPixel(5);
+
+  colorBorder.style.width = borda + px;
+  colorBorder.style.height = borda + px;
+}
+
+inicio();

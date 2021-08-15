@@ -2,7 +2,7 @@ body {
   background-color: white;
 }
 
-div.pixel {
+.pixel {
   background-color: white;
   border: 1px solid black;
   display: inline-block;
@@ -18,7 +18,7 @@ div.pixel {
   margin-bottom: 30px;
 }
 
-#title, #color-palette{
+#title , #color-palette {
   text-align: center;
   margin: 50px;
 }
