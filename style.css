@@ -7,14 +7,14 @@ div.pixel {
   border: 1px solid black;
   display: inline-block;
   height: 40px;
-  margin: 0px;
   width: 40px;
+  margin-left: -1px;
+  margin-bottom: -5px;
 }
 
-#clear-board {
+#buttonsInputs {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
   margin-bottom: 30px;
 }
 
@@ -24,13 +24,12 @@ div.pixel {
 }
 
 #pixel-board {
-  height: 220px;
   background-color: white;
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 240px;
+  box-sizing: border-box;
 }
-
 
 .color {
   border: 1px solid black;
