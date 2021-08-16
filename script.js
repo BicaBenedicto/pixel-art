@@ -74,7 +74,7 @@ function pixelPanel() {
     numberPixels = checkRange(numberPixels);
     removePixel();
     addPixel(numberPixels);
-    const borda = numberPixels * 42;
+    const borda = numberPixels * 40;
     const px = 'px';
     colorBorder.style.width = borda + px;
     colorBorder.style.height = borda + px;
@@ -100,8 +100,6 @@ function getInitColor() {
 
   for (let index = 1; index < colorPaletteChildren.length; index += 1) {
     colorPaletteChildren[index].style.backgroundColor = generateColor();
-    console.log(colorPaletteChildren[index]);
-    console.log(generateColor());
   }
 }
 
@@ -122,3 +120,6 @@ function inicio() {
 }
 
 inicio();
+
+const buttonResetColor = document.getElementById('reset-color');
+buttonResetColor.addEventListener('click', getInitColor);
