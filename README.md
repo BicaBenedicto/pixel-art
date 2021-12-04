@@ -1,4 +1,4 @@
-## Projeto de Trivia
+## Projeto Pixels Art
 
 ### Sobre o projeto:
 
