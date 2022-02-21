@@ -142,6 +142,7 @@ div .selected {
 
 .button-back-to-home {
   background-color: #6b63ff;
+  background-image: none;
   border: none;
   border-radius: 100%;
   color: white;
@@ -158,6 +159,7 @@ div .selected {
 }
 
 .button-back-to-home:hover {
+  background-color: #6b63ff;
   border-radius: 20px;
   filter: opacity(1);
   width: 300px;
